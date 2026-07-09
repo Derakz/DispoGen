@@ -1,0 +1,21 @@
+{
+  "name": "dispogen-suite-ciberdelincuencia",
+  "version": "1.0.0",
+  "description": "DispoGen Suite - modulo Ciberdelincuencia",
+  "main": "index.js",
+  "scripts": {
+    "sync:templates": "node tools/sync-templates.mjs",
+    "test": "node tools/test-generation.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "fast-xml-parser": "^5.3.3",
+    "jszip": "^3.10.1"
+  },
+  "devDependencies": {
+    "@xmldom/xmldom": "^0.8.11"
+  }
+}

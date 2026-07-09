@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>DispoGen Suite - Modulo Ciberdelincuencia</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+
+<body>
+
+<main class="container">
+
+<header class="app-header">
+  <div class="brand">
+    <div class="brand-logo-wrap">
+      <img
+        id="brandLogo"
+        src="assets/logo-dispogen-suite-ligth.png"
+        alt="DispoGen Suite"
+        class="brand-logo"
+      />
+    </div>
+    <div class="brand-copy">
+      <h1>DispoGen Suite</h1>
+      <p class="subtitle">🛡️ Modulo Ciberdelincuencia: generacion asistida de disposiciones.</p>
+    </div>
+  </div>
+
+  <!-- CONFIGURACION (DERECHA) -->
+  <div class="header-actions">
+    <div class="settings">
+      <button
+        id="btnSettings"
+        class="icon-btn"
+        type="button"
+        aria-label="Configuracion"
+        title="Configuracion"
+      >
+        ⚙
+      </button>
+
+      <div id="settingsMenu" class="settings-menu hidden">
+        <div class="settings-title">🎨 Apariencia</div>
+
+        <label class="settings-row">
+          <span>🌓 Tema</span>
+          <select id="themeSelect">
+            <option value="system">Segun el sistema</option>
+            <option value="light">Modo claro</option>
+            <option value="dark">Modo oscuro</option>
+          </select>
+        </label>
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="grid grid-2">
+    <!-- DESPACHO Y FISCAL -->
+    <section class="card">
+      <div class="card-title">⚙️ Configuracion</div>
+
+      <label>🏛️ Despacho Fiscal</label>
+      <select id="despachoSelect">
+        <option value="">Seleccione despacho</option>
+      </select>
+
+      <label class="checkbox">
+        <input type="checkbox" id="chkRecordarDespacho" />
+        💾 Recordar despacho fiscal
+      </label>
+
+      <label>👤 Fiscal Responsable</label>
+      <input
+        id="fiscalInput"
+        type="text"
+        placeholder="Nombre del fiscal responsable"
+      />
+
+      <label class="checkbox">
+        <input type="checkbox" id="rememberFiscal" />
+        💾 Recordar fiscal responsable
+      </label>
+    </section>
+
+    <!-- DELITO Y DISPOSICION -->
+    <section class="card">
+      <div class="card-title">📄 Plantilla</div>
+
+      <label>🧾 Tipo de delito</label>
+      <select id="delitoSelect">
+        <option value="">Seleccione delito</option>
+      </select>
+
+      <label>📚 Tipo de disposicion</label>
+      <select id="disposicionSelect" disabled>
+        <option value="">Seleccione disposicion</option>
+      </select>
+
+      <p class="mini-hint">ℹ️ Solo se muestran disposiciones disponibles para el delito elegido.</p>
+    </section>
+  </div>
+
+  <div class="grid">
+    <!-- PDF -->
+    <section class="card">
+      <div class="card-title">📎 Documento fuente</div>
+
+      <label>📥 Cargar PDF</label>
+      <input type="file" id="pdfInput" accept="application/pdf" />
+      <p class="mini-hint">💡 Tip: si el PDF es escaneado, se recomienda OCR.</p>
+    </section>
+
+    <!-- TEXTO -->
+    <section class="card">
+      <div class="card-title">📝 Contenido</div>
+
+      <div class="toolbar">
+        <button type="button" id="btnTextoManual" class="btn-secondary">
+          ✍️ Ingresar texto manualmente
+        </button>
+
+        <button type="button" id="btnDatosExtra" class="btn-secondary">
+          ➕ Datos adicionales
+        </button>
+      </div>
+
+      <textarea
+        id="caseInput"
+        class="hidden"
+        rows="8"
+        placeholder="Pegue aqui el texto del caso o hechos..."
+      ></textarea>
+
+      <textarea
+        id="datosApoyo"
+        class="hidden"
+        rows="4"
+        placeholder="Datos adicionales (opcional)"
+      ></textarea>
+    </section>
+
+    <!-- ACCION -->
+    <section class="card action-card">
+      <div class="action-row">
+        <button id="btnGenerar" class="btn-primary">🚀 Generar disposicion</button>
+        <p id="estado" class="status"></p>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="app-footer">
+  <div class="footer-inner">
+    <div class="footer-line">
+      © 2026 <strong>DispoGen Suite</strong>. Todos los derechos reservados.
+    </div>
+    <div class="footer-sub">
+      🔒 Software privado de apoyo al trabajo fiscal.
+      <span class="dot">&bull;</span>
+      Modulo: <strong>Ciberdelincuencia</strong>.
+      <span class="dot">&bull;</span>
+      Creado por <strong>Jhonathan Anthony Andres Barba</strong>.
+    </div>
+  </div>
+</footer>
+
+  <!-- =============================
+       LIBRERIAS (GLOBAL, UNA SOLA VEZ)
+  ============================== -->
+
+  <!-- pdf.js -->
+  <script src="libs/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "libs/pdf.worker.min.js";
+  </script>
+
+  <!-- Word -->
+  <script src="libs/pizzip.min.js"></script>
+  <script src="libs/docxtemplater.js"></script>
+  <script src="libs/FileSaver.min.js"></script>
+
+  <!-- =============================
+       APP (UNICO ENTRY POINT)
+  ============================== -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>
