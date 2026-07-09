@@ -1,0 +1,49 @@
+{
+  "fraude": {
+    "label": "Fraude Informático",
+    "plantillas": [
+      {
+        "id": "apertura_fraude",
+        "label": "Disposición de Apertura",
+        "file": "plantilla_apertura_fraude.docx"
+      },
+      {
+        "id": "archivo_monto_minimo",
+        "label": "Archivo Liminar – Monto Mínimo",
+        "file": "plantilla_archivo_monto_minimo.docx"
+      },
+      {
+        "id": "archivo_hurto_fraude",
+        "label": "Archivo Liminar – Hurto y Fraude Informático",
+        "file": "plantilla_archivo_hurtofraude.docx"
+      },
+      {
+        "id": "archivo_fraude_desistimiento",
+        "label": "Archivo Liminar – Por desistimiento",
+        "file": "plantilla_archivo_desistimiento.docx"
+      }
+    ]
+  },
+  "suplantacion": {
+    "label": "Suplantación de Identidad",
+    "plantillas": [
+      {
+        "id": "apertura_suplantacion",
+        "label": "Disposición de Apertura",
+        "file": "plantilla_apertura_suplantacion.docx"
+      }
+    ]
+  },
+    "estafa": {
+    "label": "Estafa",
+    "plantillas": [
+      {
+        "id": "derivacion_estafa",
+        "label": "Disposición de Derivación – Estafa",
+        "file": "plantilla_derivacion_estafa.docx"
+      }
+    ]
+  }
+}
+
+

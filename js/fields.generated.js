@@ -1,0 +1,109 @@
+// AUTO-GENERATED. NO EDITAR A MANO.
+// Generado por tools/sync-templates.mjs
+export const TEMPLATE_FIELDS = {
+  "apertura_fraude": {
+    "file": "plantilla_apertura_fraude.docx",
+    "fields": [
+      "agraviado",
+      "anio_hecho",
+      "caso",
+      "correo_despacho",
+      "despacho",
+      "fecha_actual",
+      "fiscal_responsable",
+      "hechos",
+      "mes_hecho",
+      "oficio",
+      "remitente"
+    ],
+    "missing": false
+  },
+  "archivo_monto_minimo": {
+    "file": "plantilla_archivo_monto_minimo.docx",
+    "fields": [
+      "agraviado",
+      "caso",
+      "correo_despacho",
+      "despacho",
+      "fecha_actual",
+      "fiscal_responsable",
+      "hechos",
+      "monto",
+      "oficio",
+      "remitente"
+    ],
+    "missing": false
+  },
+  "archivo_hurto_fraude": {
+    "file": "plantilla_archivo_hurtofraude.docx",
+    "fields": [
+      "agraviado",
+      "caso",
+      "correo_despacho",
+      "despacho",
+      "fecha_actual",
+      "fiscal_responsable",
+      "hechos",
+      "hechos_fraude",
+      "hechos_hurto",
+      "monto",
+      "oficio",
+      "parrafo_hurto",
+      "remitente"
+    ],
+    "missing": false
+  },
+  "archivo_fraude_desistimiento": {
+    "file": "plantilla_archivo_desistimiento.docx",
+    "fields": [
+      "agraviado",
+      "caso",
+      "correo_despacho",
+      "despacho",
+      "fecha_actual",
+      "fiscal_responsable",
+      "hechos",
+      "motivo_desistimiento",
+      "oficio",
+      "referencia_acta",
+      "remitente"
+    ],
+    "missing": false
+  },
+  "apertura_suplantacion": {
+    "file": "plantilla_apertura_suplantacion.docx",
+    "fields": [
+      "agraviado",
+      "caso",
+      "correo_despacho",
+      "despacho",
+      "fecha_actual",
+      "fiscal_responsable",
+      "hechos",
+      "oficio",
+      "remitente"
+    ],
+    "missing": false
+  },
+  "derivacion_estafa": {
+    "file": "plantilla_derivacion_estafa.docx",
+    "fields": [
+      "agraviado",
+      "aplicacion_factual_estafa",
+      "caso",
+      "despacho",
+      "estafa_dp",
+      "estafa_error",
+      "estafa_pp",
+      "fecha_actual",
+      "fiscal_responsable",
+      "fundamento_competencia_territorial",
+      "hechos",
+      "lugar_competencia",
+      "oficio",
+      "parrafo_calificacion_estafa",
+      "remitente"
+    ],
+    "missing": false
+  }
+};
