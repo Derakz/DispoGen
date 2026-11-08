@@ -8,6 +8,7 @@ export const TEMPLATE_FIELDS = {
       "anio_hecho",
       "caso",
       "correo_despacho",
+      "depincri",
       "despacho",
       "fecha_actual",
       "fiscal_responsable",

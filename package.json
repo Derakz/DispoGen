@@ -4,6 +4,7 @@
   "description": "DispoGen Suite - modulo Ciberdelincuencia",
   "main": "index.js",
   "scripts": {
+    "start": "node tools/server.mjs",
     "sync:templates": "node tools/sync-templates.mjs",
     "test": "node tools/test-generation.mjs"
   },

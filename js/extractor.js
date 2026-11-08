@@ -23,7 +23,7 @@ function safeParseJSON(raw) {
 
 /** Llama a OpenAI Chat Completions y devuelve content */
 async function callOpenAI({ apiKey, prompt }) {
-  const response = await fetch("https://api.openai.com/v1/chat/completions", {
+  const response = await fetch("/api/extract", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -36,6 +36,9 @@ async function callOpenAI({ apiKey, prompt }) {
     }),
   });
 
+  if (!response.headers.get("content-type")?.includes("application/json")) {
+    throw new Error("Inicie DispoGen con npm start y abra http://127.0.0.1:5500.");
+  }
   const data = await response.json();
 
   if (!response.ok) {

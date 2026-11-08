@@ -282,6 +282,16 @@ async function validarPlantillasAsync(disposiciones) {
   }
 }
 
+const depincriGrupo = document.getElementById("depincriGrupo");
+const depincriDistrito = document.getElementById("depincriDistrito");
+
+function actualizarSelectorDepincri() {
+  depincriGrupo.hidden = disposicionSelect.value !== "apertura_fraude";
+  depincriDistrito.selectedIndex = 0;
+}
+
+disposicionSelect.addEventListener("change", actualizarSelectorDepincri);
+
 function inicializarSelectoresDesdeCatalogo(catalogo) {
   DISPOSICIONES_RUNTIME = catalogoADisposiciones(catalogo);
   validarPlantillasAsync(DISPOSICIONES_RUNTIME).catch(console.error);
@@ -299,6 +309,7 @@ function inicializarSelectoresDesdeCatalogo(catalogo) {
 
   delitoSelect.onchange = () => {
     disposicionSelect.innerHTML = '<option value="">Seleccione disposicion</option>';
+    actualizarSelectorDepincri();
     disposicionSelect.disabled = true;
 
     const delito = DISPOSICIONES_RUNTIME[delitoSelect.value];
@@ -352,6 +363,11 @@ btnGenerar.addEventListener("click", async () => {
 
     const seleccion = obtenerDisposicionSeleccionada();
     if (!seleccion) throw new Error("Seleccione delito y disposicion.");
+    const depincri = depincriDistrito.value;
+    if (seleccion.id === "apertura_fraude" && !depincri) {
+      depincriDistrito.focus();
+      throw new Error("Seleccione el distrito de la DEPINCRI.");
+    }
 
     const textoFuente = limpiarTextoParaExtractor(caseInput.value || "");
     const textoApoyo = limpiarTextoParaExtractor(datosApoyoInput.value || "");
@@ -390,6 +406,7 @@ btnGenerar.addEventListener("click", async () => {
     const payloadFinal = {
       ...defaults,
       ...datos,
+      depincri,
 
       // institucional
       despacho: despacho.texto,
